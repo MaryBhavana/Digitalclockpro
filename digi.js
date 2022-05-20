@@ -1,0 +1,195 @@
+const d = new Date();
+
+let h = d.getHours() > 12 ? d.getHours() - 12 : d.getHours();
+document.getElementById("hours").innerHTML = h + "<br>Hours" ; 
+
+
+let ap = d.getHours() >= 12 ? "PM" : "AM";
+document.getElementById("ampm").innerHTML = ap ;
+
+let s = d.getSeconds() < 10 ? "0" + d.getSeconds() : d.getSeconds();
+document.getElementById("seconds").innerHTML = s + "<br>Seconds" ;
+
+let m = d.getMinutes() < 10 ? "0" + d.getMinutes() : d.getMinutes();
+document.getElementById("minutes").innerHTML = m + "<br>Minutes" ;
+
+
+// document.getElementById("mrng").style.backgroundImage = "url('Component 30 – 1.svg')" ;
+//   document.getElementById("morning").innerHTML = "GRAB SOME HEALTHY BREAKFAST!!!";
+//   document.getElementById("morningmes").innerHTML = "GOOD MORNING!! WAKE UP !!";
+
+
+// document.getElementById("afternoon").style.backgroundImage = "url('Component 31 – 1 (1).svg')" ;
+// document.getElementById("noon").innerHTML = "LET'S HAVE SOME LUNCH !!";
+// document.getElementById("noonmes").innerHTML = "GOOD AFTERNOON !! TAKE SOME SLEEP";
+
+
+// document.getElementById("evening").style.backgroundImage = "url('lunch_image.jpg')" ;
+// document.getElementById("eve").innerHTML = "STOP YAWNING, GET SOME TEA.. ITS JUST EVENING!";
+// document.getElementById("evemes").innerHTML = "GOOD EVENING !!";
+
+
+// document.getElementById("gn").style.backgroundImage = "url('Component 32 – 1.svg')" ;
+// document.getElementById("gn").style.backgroundImage.backgroundSize = "400px" ;
+// document.getElementById("night").innerHTML = "CLOSE YOUR EYES AND GO TO SLEEP";
+// document.getElementById("nightmes").innerHTML = "GOOD NIGHT !!";
+
+if( h < 12 && ap == "AM")
+{
+
+    document.getElementById("mrng").style.backgroundImage = "url('Component 30 – 1.svg')" ;
+    document.getElementById("morning").innerHTML = "GRAB SOME HEALTHY BREAKFAST!!!";
+    document.getElementById("morningmes").innerHTML = "GOOD MORNING!! WAKE UP !!";   
+}
+else if( h < 4 && ap =="PM")
+{
+    document.getElementById("afternoon").style.backgroundImage = "url('Component 31 – 1 (1).svg')" ;
+    document.getElementById("noon").innerHTML = "LET'S HAVE SOME LUNCH !!";
+    document.getElementById("noonmes").innerHTML = "GOOD AFTERNOON !! TAKE SOME SLEEP";
+}
+else if( h < 8 && ap == "PM")
+{
+    document.getElementById("evening").style.backgroundImage = "url('lunch_image.jpg')" ;
+    document.getElementById("eve").innerHTML = "STOP YAWNING, GET SOME TEA.. ITS JUST EVENING!";
+    document.getElementById("evemes").innerHTML = "GOOD EVENING !!";
+}
+else if( h >= 8 && ap =="PM")
+{
+    document.getElementById("gn").style.backgroundImage = "url('Component 32 – 1.svg')" ;
+    document.getElementById("gn").style.backgroundImage.backgroundSize = "400px" ;
+    document.getElementById("night").innerHTML = "CLOSE YOUR EYES AND GO TO SLEEP";
+    document.getElementById("nightmes").innerHTML = "GOOD NIGHT !!";
+}
+displayValue();
+//--------------------------------------------------------------------------
+function displayValue()
+{
+    // let waketime = document.getElementById("dmorning").value
+    // let waketime = document.querySelector('#dmorning');
+    selectElement = document.querySelector('#dmorning');
+    wake = selectElement.options[selectElement.selectedIndex].value;
+    document.querySelector('#wake').textContent = wake ;
+
+
+    selectElement = document.querySelector('#dnoon');
+    wake = selectElement.options[selectElement.selectedIndex].value;
+    document.querySelector('#lunch').textContent = wake ;
+
+    selectElement = document.querySelector('#deve');
+    wake = selectElement.options[selectElement.selectedIndex].value;
+    document.querySelector('#nap').textContent = wake ;
+
+
+    selectElement = document.querySelector('#dnight');
+    wake = selectElement.options[selectElement.selectedIndex].value;
+    document.querySelector('#night2').textContent = wake ;
+    
+//     let lunchtime = document.getElementById("dnoon").value
+//     let naptime = document.getElementById("dreve").value
+//     let nighttime = document.getElementById("dnight").value
+
+//     // var wakeValue = document.getElementById("dmorning");
+//     var wakeValue = document.querySelector('#dmorning');
+//     var value1 = wakeValue.options[wakeValue.selectedIndex].text;
+
+//     var lunchValue = document.getElementById("dnoon");
+//     var value2 = lunchValue.options[lunchValue.selectedIndex].text;
+
+//     var napValue = document.getElementById("deve");
+//     var value3 = napValue.options[napValue.selectedIndex].text;
+
+//     var nightValue = document.getElementById("dnight");
+//     var value4 = nightValue.options[nightValue.selectedIndex].text;
+    
+//     if (waketime == "none") {
+//       document.getElementById("wake").innerHTML = "";
+//     } else {
+//       document.getElementById("wake").innerHTML =
+//         "Wake up time : " + value1;
+//     }
+
+//     if (lunchtime == "none") {
+//       document.getElementById("lunch").innerHTML = "";
+//     } else {
+//       document.getElementById("lunch").innerHTML =
+//         "Lunch time : " + value2;
+//     }
+
+//     if (naptime == "none") {
+//       document.getElementById("nap").innerHTML = "";
+//     } else {
+//       document.getElementById("nap").innerHTML = "Nap time : " + value3;
+//     }
+//     if (nighttime == "none") {
+//         document.getElementById("night").innerHTML = "";
+//       } else {
+//         document.getElementById("night").innerHTML = "night time : " + value4;
+//       }
+  }
+//--------------------------------------------------------------------------
+    // value = 0 ;
+    // if (h>12 && ap == "AM")
+    // {
+    //     value = 11;
+    // }
+    // else if(h<= 4 && ap == "PM")
+    // {
+    //     value = 2;
+    // }
+    // else if(h<=8 && ap == "PM")
+    // {
+    //     value =4;
+    // }
+    // else if(h>=8 && ap == "PM")
+    // {
+    //     value = 9;
+    // }
+    // let wt = document.getElementById("morning").value;
+    // let lt = document.getElementById("noon").value ;
+    // let et = document.getElementById("eve").value;
+    // let nt = document.getElementById("night").value;
+
+    // if(wt == h)
+    // {
+    //     document.getElementById("im").style.backgroundImage = "url(morning.svg)" ;
+    //     document.getElementById("mes").innerHTML = "GRAB SOME HEALTHY BREAKFAST!!!";
+    // }
+    // else if(lt == h)
+    // {
+    //     document.getElementById("im").style.backgroundImage = "url(lunch.svg)" ;
+    //     document.getElementById("mes").innerHTML = "LET'S HAVE SOME LUNCH !!";
+    // }
+    // else if(et == h)
+    // {
+    //     document.getElementById("im").style.backgroundImage = "url(evening.svg)" ;
+    //     document.getElementById("mes").innerHTML = "STOP YAWNING, GET SOME TEA.. ITS JUST EVENING!";
+    // }
+    // else if(nt == h)
+    // {
+    //     document.getElementById("im").style.backgroundImage = "url(night.svg)" ;
+    //     document.getElementById("mes").innerHTML = "CLOSE YOUR EYES AND GO TO SLEEP";
+    // }
+
+
+
+//--------------------------------------------------------------------------
+
+    // let hours = document.getElementById("hours");
+    // let minutes = document.getElementById("minutes");
+    // let seconds = document.getElementById("seconds");
+    // let ampm = document.getElementById("ampm");
+
+    // let hrs = new Date().getHours();
+    // hours.innerHTML = hrs ;
+
+
+//--------------------------------------------------------------------------
+// let ap = date.getHours() >= 12 ? "PM" : "AM";
+// h = h < 10 ? "0" + h : h ;
+// let m = date.getMinutes() < 10 ? + date.getMinutes() : date.getMinutes();
+// let s = date.getSeconds() < 10 ? + date.getSeconds() : date.getSeconds();
+
+// document.getElementById("hs").innerHTML = h + "<br>Hours";
+// document.getElementById("ms").innerHTML = m + "<br>Mins";
+// document.getElementById("ss").innerHTML = s + "<br>Seconds";
+// document.getElementById("ampm").innerHTML = ap ;
